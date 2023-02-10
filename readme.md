@@ -1,11 +1,12 @@
 
+This is a guide to use catch with cmake instead of the header file approach provided by Edugator. It was originally written for use with the University of Florida's COP3530 class but should work regargdless.
+
 # Table of Contents
 
 1.  [Part 1: Why Bother?](#org5e1347a)
 2.  [Part 2: Setting up cmake](#orgf5c7f84)
-3.  [Part 3: Integrating with clion](#org390eeee):ATTACH:
+3.  [Part 3: Integrating with clion](#org390eeee)
 
-This is a guide to use catch with cmake instead of the header file approach, not a question, but I didn&rsquo;t know where else to put it.
 
 **Note that I use clion, so this guide will only talk about integrating it there - the cmake steps should be the same, but I&rsquo;m not sure how cmake integrates with VSCode - if anyone could share under this post, that would be helpful!**
 
@@ -38,6 +39,7 @@ The top of my test.cpp looks like this:
 #include "../src/StudentNode.h"
 ```
 
+Keep in mind that you should include your own header files.
 
 
 <a id="org390eeee"></a>
@@ -50,10 +52,14 @@ I think Clion should do this automatically, but just in case, here&rsquo;s some 
 
 ![img](./images/Tests.png)
 
-Once the two default builds are set up, I find it easiest to test specific things by duplicating the base ones and changing flags. For example, to test the `[overloads]` catch flag only:
+Once the two default builds are set up, I find it easiest to test specific things by duplicating the base configurations and changing flags. For example, to test the `[overloads]` catch flag only:
 ![img](./images/Catch_Flags.png)
 
 You can also pass in certain files as stdin so you don&rsquo;t have to type test inputs manually:
 ![img](./images/Custom_cin.png)
 Note that this can be done with the provided files as well as custom ones you write.
 
+# Part 4: Using it
+At this point, everything should work! You can just pick your run configuration in the menu at the top, and it'll compile and run your main or Tests or any of your debug configurations.
+
+I hope this helps!
