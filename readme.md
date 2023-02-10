@@ -8,7 +8,7 @@ This is a guide to use catch with cmake instead of the header file approach prov
 3.  [Part 3: Integrating with clion](#org390eeee)
 
 
-**Note that I use clion, so this guide will only talk about integrating it there - the cmake steps should be the same, but I&rsquo;m not sure how cmake integrates with VSCode - if anyone could share under this post, that would be helpful!**
+**Note**:I use clion, so this guide will only talk about integrating catch with cmake there - the cmake steps should be the same, but I&rsquo;m not sure how cmake integrates with VSCode - if anyone could share those details through a pull request, that would be helpful!
 
 
 <a id="org5e1347a"></a>
