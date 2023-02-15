@@ -24,6 +24,8 @@ By instead using catch&rsquo;s newer cmake integration, it builds way quicker, l
 # Part 2: Setting up cmake
 This is mostly the same as from the video tutorial on each programming quiz (if you&rsquo;re using clion): navigate to test.cpp, click create a CMakeLists.txt, and accept the options to get a default file. From there, you need to add a couple lines to first pull in catch2 as a dependency and then link it to your compiled Tests executable. It&rsquo;s easier to show than to tell, so I&rsquo;ve attached a commented [CMakeLists.txt](./CMakeLists.txt) to explain.
 
+Note that the CMakeLists.txt that is created by default doesn't include an executable for your Main without debug stuff by default. To create it, simply copy your Project1 or Tests `executable_add` block and replace test.cpp with main.cpp. catch.hpp is provided with the Project1 template and is by default included in the add_executable line for your default build. Be sure to remove any reference to catch.hpp in your CMakeLists.txt to actually use the faster Catch2 setup. The easiest way to do this would probably be to delete the catch.hpp file through Clion, which would then (hopefully) remove references to it elsewhere. Otherwise, you can just delete it yourself.
+
 
 # Part 2.5: Changing the include in test.cpp
 I forgot to include this when originally writing the guide, but it's an important step. First, make sure you don't have your `main.cpp` included in `test.cpp`. Additionally, you need to replace the original `#include "catch.h"` with `#include <catch2/catch_test_macros.hpp>` for it to actually use the cmake-based catch.
