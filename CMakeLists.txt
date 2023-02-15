@@ -26,7 +26,9 @@ add_executable(Main
         src/AVL.cpp src/AVL.h src/Parser.cpp src/Parser.h src/StudentNode.h)
 
 #this one doesn't include main, instead having your test.cpp
-add_executable(Tests
+add_executable(Tests #this will be named Project1 by default - either change it to Tests or see the comment at the bottom of the file
         test-unit/test.cpp # your test file
         src/AVL.cpp src/AVL.h src/Parser.cpp src/Parser.h src/StudentNode.h)
+        
 target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain) #link catch to test.cpp file
+#if your testing executable is named Project1, change Tests in the line above to Project1
