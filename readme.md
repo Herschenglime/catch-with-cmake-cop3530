@@ -3,6 +3,8 @@ This is a guide to use catch with cmake instead of the header file approach prov
 
 **Note**:I use clion, so this guide will only talk about integrating catch with cmake there - the cmake steps should be the same, but I&rsquo;m not sure how cmake integrates with VSCode - if anyone could share those details through a pull request, that would be helpful!
 
+Edit: [This video](https://youtu.be/QNUj4IPVOPA) on Youtube was provided to us to set up Catch2 with VSCode - I haven't watched it, but it might be helpful. The cmake part of this guide should still work for VSCode.
+
 
 # Table of Contents
 
