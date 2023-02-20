@@ -66,3 +66,6 @@ Note that this can be done with the provided files as well as custom ones you wr
 At this point, everything should work! You can just pick your run configuration in the menu at the top, and it'll compile and run your main or Tests or any of your debug configurations.
 
 I hope this helps!
+
+# Addendum
+The link to the Catch2 documentation for setting this up is [here](https://github.com/catchorg/Catch2/blob/devel/docs/cmake-integration.md). It goes into more detail, but was a bit hard for me to parse at first, which was one of the reasons I wrote this guide.
