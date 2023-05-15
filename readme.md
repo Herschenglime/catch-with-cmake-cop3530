@@ -1,5 +1,5 @@
 
-This is a guide to use catch with cmake instead of the header file approach provided by Edugator. It was originally written for use with the University of Florida's COP3530 class but should work regargdless.
+This is a guide to use catch with cmake instead of the header file approach provided by Edugator. It was originally written for use with the University of Florida's COP3530 class but should work under any circumstances.
 
 **Note**:I use clion, so this guide will only talk about integrating catch with cmake there - the cmake steps should be the same, but I&rsquo;m not sure how cmake integrates with VSCode - if anyone could share those details through a pull request, that would be helpful!
 
