@@ -5,7 +5,7 @@ A [video version of this guide](https://youtu.be/DqE3UpOdBLw?si=rM44usul4MM0pDC6
 
 **Note**:I use CLion, so the first part of this guide pulls screenshots from that interface. A VSCode addendum is provided at the bottom of the file with an additional tutorial video for getting set up - your CMakeLists.txt file and test.cpp should look the same, regardless of the IDE that you are using.
 
-# Part 1: Why Bother?
+# Part 0: Why Bother?
 
 Using the included catch file works fine, but each time you change test.cpp, it recompiles the entire catch header, making it take quite a while. Additionally, the catch.hpp provided on the project template is old and doesn&rsquo;t actually compile on Linux without adding the line `#define CATCH_CONFIG_NO_POSIX_SIGNALS` (<https://github.com/catchorg/Catch2/issues/2421>).
 
@@ -14,7 +14,7 @@ By instead using catch&rsquo;s newer cmake integration, it builds way quicker, l
 
 <a id="orgf5c7f84"></a>
 
-# Part 1.5: Put your project on git/Github *now*
+# Part 1: Put your project on git/Github *now*
 As a side-effect of pulling catch2 in as a Git repository, CLion will think your project is actually Catch2 and not whatever you're working on. It's easiest to address this beforehand and get your version control workflow set up with CLion so that you don't run into issues after the fact.
 
 I find it easiest to click the "Version control" tab and then "Share Project On" to have pushes to my Github automatically set up, but feel free to do whatever is most comfortable for you.
