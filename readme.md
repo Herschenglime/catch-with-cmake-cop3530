@@ -61,6 +61,10 @@ Note that this can be done with the provided files as well as custom ones you wr
 # Part 3 Alternate: Integrating with VSCode
 Everything in the guide about the CMakeLists.txt file and test.cpp holds - the only difference with VSCode is how test running is integrated into the editor. You can also run a newer version of Catch2 if you want.
 
+Here is a [video guide](https://youtu.be/yj8baGjXmTU), although note that it doesn't use Project 1 as an example - you can modify the CMakeLists.txt provided by this repository in your own project. If you're interested in knowing why the CMakeLists.txt is set up like it is, you can watch the first part of the CLion-based video.
+
+The text below is a writeup of the extra details from said video to get Catch2 set up with VSCode.
+
 Note that this method will only work for code that is locally hosted on your computer such that git can "verify ownership" - you might run into problems if you store your code on a flash drive or a OneDrive folder, for instance.
 
 ## Extensions and Installations
