@@ -59,7 +59,7 @@ You can also pass in certain files as stdin so you don&rsquo;t have to type test
 Note that this can be done with the provided files as well as custom ones you write.
 
 # Part 3 Alternate: Integrating with VSCode
-Everything in the guide about the CMakeLists.txt file and test.cpp holds - the only difference with VSCode is how test running is integrated into the editor. 
+Everything in the guide about the CMakeLists.txt file and test.cpp holds - the only difference with VSCode is how test running is integrated into the editor. You can also run a newer version of Catch2 if you want.
 
 Note that this method will only work for code that is locally hosted on your computer such that git can "verify ownership" - you might run into problems if you store your code on a flash drive or a OneDrive folder, for instance.
 
@@ -83,7 +83,7 @@ to have whichever version of CMake that you have installed.
 ## Running and Compiling Tests
 Once your CMakeLists.txt and test.cpp are in place, run the command `CMake: Configure` in the VSCode command palette to set CMake up.
 
-![img](./images/VSCode_Cmake.png)
+![img](./images/VSCode_CMake.png)
 
 Once this has run, you should be able to open the testing panel on the side of the window and see the name of your project. Click the "Refresh tests" button to reload your tests.
 
