@@ -1,7 +1,7 @@
 
 This is a guide to use catch with cmake instead of the header file approach provided by Edugator. It was originally written for use with the University of Florida's COP3530 class but should work under any circumstances.
 
-A (video version of this guide)[https://youtu.be/DqE3UpOdBLw?si=rM44usul4MM0pDC6] is available.
+A [video version of this guide](https://youtu.be/DqE3UpOdBLw?si=rM44usul4MM0pDC6) is available.
 
 **Note**:I use CLion, so the first part of this guide pulls screenshots from that interface. A VSCode addendum is provided at the bottom of the file with an additional tutorial video for getting set up - your CMakeLists.txt file and test.cpp should look the same, regardless of the IDE that you are using.
 
