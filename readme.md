@@ -1,20 +1,11 @@
 
 This is a guide to use catch with cmake instead of the header file approach provided by Edugator. It was originally written for use with the University of Florida's COP3530 class but should work under any circumstances.
 
-**Note**:I use clion, so this guide will only talk about integrating catch with cmake there - the cmake steps should be the same, but I&rsquo;m not sure how cmake integrates with VSCode - if anyone could share those details through a pull request, that would be helpful!
+A [video version of this guide](https://youtu.be/DqE3UpOdBLw?si=rM44usul4MM0pDC6) is available.
 
-Edit: [This video](https://youtu.be/QNUj4IPVOPA) on Youtube was provided to us to set up Catch2 with VSCode - I haven't watched it, but it might be helpful. The cmake part of this guide should still work for VSCode.
+**Note**:I use CLion, so the first part of this guide pulls screenshots from that interface. A VSCode addendum is provided at the bottom of the file with an additional tutorial video for getting set up - your CMakeLists.txt file and test.cpp should look the same, regardless of the IDE that you are using.
 
-
-# Table of Contents
-
-1.  [Part 1: Why Bother?](#org5e1347a)
-2.  [Part 2: Setting up cmake](#orgf5c7f84)
-3.  [Part 3: Integrating with clion](#org390eeee)
-
-<a id="org5e1347a"></a>
-
-# Part 1: Why Bother?
+# Part 0: Why Bother?
 
 Using the included catch file works fine, but each time you change test.cpp, it recompiles the entire catch header, making it take quite a while. Additionally, the catch.hpp provided on the project template is old and doesn&rsquo;t actually compile on Linux without adding the line `#define CATCH_CONFIG_NO_POSIX_SIGNALS` (<https://github.com/catchorg/Catch2/issues/2421>).
 
@@ -23,7 +14,7 @@ By instead using catch&rsquo;s newer cmake integration, it builds way quicker, l
 
 <a id="orgf5c7f84"></a>
 
-# Part 1.5: Put your project on git/Github *now*
+# Part 1: Put your project on git/Github *now*
 As a side-effect of pulling catch2 in as a Git repository, CLion will think your project is actually Catch2 and not whatever you're working on. It's easiest to address this beforehand and get your version control workflow set up with CLion so that you don't run into issues after the fact.
 
 I find it easiest to click the "Version control" tab and then "Share Project On" to have pushes to my Github automatically set up, but feel free to do whatever is most comfortable for you.
@@ -67,6 +58,59 @@ You can also pass in certain files as stdin so you don&rsquo;t have to type test
 ![img](./images/Custom_cin.png)
 Note that this can be done with the provided files as well as custom ones you write.
 
+# Part 3 Alternate: Integrating with VSCode
+Everything in the guide about the CMakeLists.txt file and test.cpp holds - the only difference with VSCode is how test running is integrated into the editor. You can also run a newer version of Catch2 if you want.
+
+Here is a [video guide](https://youtu.be/yj8baGjXmTU) by TA Brian, although note that it doesn't use Project 1 as the example - you can modify the CMakeLists.txt provided by this repository in your own project. If you're interested in knowing why the CMakeLists.txt is set up like it is, you can watch the first part of the CLion-based video.
+
+The text below is a writeup of the extra details from said video to get Catch2 set up with VSCode.
+
+Note that this method will only work for code that is locally hosted on your computer such that git can "verify ownership" - you might run into problems if you store your code on a flash drive or a OneDrive folder, for instance.
+
+## Extensions and Installations
+Make sure that you have the following extensions installed on your VSCode.
+
+- C/C++ (Microsoft)
+- C/C++ Extension Pack (Microsoft)
+- C++ TestMate (Mate Pek)
+- CMake Tools (Microsoft)
+- CMake Language Support (either twxs or Jose Torres)
+
+You must also install CMake itself to your system. CLion bundles a version of CMake with itself so this step is unnecessary if on CLion. Note that the version you install may be older that what CLion would package - if you get an error in your CMakeLists.txt about your CMake being too old, simply change this line
+
+``` cmake
+cmake_minimum_required(VERSION 3.24)
+```
+
+to have whichever version of CMake that you have installed.
+
+## Running and Compiling Tests
+Once your CMakeLists.txt and test.cpp are in place, run the command `CMake: Configure` in the VSCode command palette to set CMake up.
+
+![img](./images/VSCode_CMake.png)
+
+Once this has run, you should be able to open the testing panel on the side of the window and see the name of your project. Click the "Refresh tests" button to reload your tests.
+
+
+![img](./images/refresh_tests.png)
+
+From here, you should be able to click on the drop down for TestMate C++ and then another for whatever you named your test executable in CMakeLists.txt. Click the play button to run the tests.
+
+
+![img](./images/vsc_run_tests.png)
+
+Note that each time you update your tests, you will have to click the "Refresh tests" button again for the changes to register. To get around this, you can add the following to the bottom of your CMakeLists.txt file:
+
+```cmake
+include(CTest)
+include(Catch)
+catch_discover_tests(Tests) # must be named the same as your test executable
+```
+
+Once you run "Cmake: Configure" again, CTests will be registered as well - now, you can click the play button next to its entry in the testing window and it will automatically rebuild your tests before running them.
+
+![img](./images/CTests.png)
+
 # Part 4: Using it
 At this point, everything should work! You can just pick your run configuration in the menu at the top, and it'll compile and run your main or Tests or any of your debug configurations.
 
@@ -74,3 +118,4 @@ I hope this helps!
 
 # Addendum
 The link to the Catch2 documentation for setting this up is [here](https://github.com/catchorg/Catch2/blob/devel/docs/cmake-integration.md). It goes into more detail, but was a bit hard for me to parse at first, which was one of the reasons I wrote this guide.
+
